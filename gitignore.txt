@@ -1,0 +1,137 @@
+# Node.js dependencies
+/node_modules
+*/node_modules
+.*/node_modules
+
+# Compiled output
+/build
+/dist
+
+# Logs
+/logs
+*.log
+*.caches
+*.cache
+*.scss
+*.js
+*.map
+
+# Environment files
+.env
+
+# Dependency directories
+/jspm_packages
+/bower_components
+
+# Visual Studio Code directories
+.vscode
+/.vscode
+
+# Python bytecode (pyc) and caches
+__pycache__
+*.pyc
+
+# Virtual environment
+venv
+
+# IDE files
+.idea
+*.iml
+
+# Python environment
+/.python-version
+
+# Compiled Python files
+*.pyc
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# macOS
+.DS_Store
+
+# Temporary files
+*~
+*.swp
+*.swo
+
+# User-specific files
+*.sublime-workspace
+*.sublime-project
+*.sublime-settings
+
+# Data files and directories common in repo root
+datasets/
+logs/
+*.h5
+results/
+temp/
+test/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+samples/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# VS Studio Code
+.vscode
+
+# PyCharm
+.idea/
+
+# Dropbox
+.dropbox.attr
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# dotenv
+.env
+
+# virtualenv
+.venv
+venv/
+ENV/
