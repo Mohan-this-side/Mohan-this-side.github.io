@@ -11,6 +11,8 @@ particlesJS.load('particles-js', 'particles.json', function() {
 
 /* Otherwise just put the config content (json): */
 
+// Commenting out particles.js to prevent errors since particles.js library is not included
+/*
 particlesJS('particles-js',
   
   {
@@ -131,3 +133,4 @@ particlesJS('particles-js',
   }
 
 );
+*/

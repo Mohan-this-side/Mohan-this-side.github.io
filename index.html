@@ -10,7 +10,7 @@
   <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images-tb/ailogo.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/image-tb/ailogo.svg" type="image/x-icon">
 
   <!--
     - custom css link
@@ -39,10 +39,7 @@
   -->
 
     <main>
-
-      <!--
-        - #SIDEBAR
-      -->
+      <!-- Sidebar -->
       <aside class="sidebar" data-sidebar>
 
         <div class="sidebar-info">
@@ -143,11 +140,7 @@
 
       </aside>
 
-
-      <!--
-        - #main-content
-      -->
-
+      <!-- Main Content -->
       <div class="main-content">
 
         <!--
@@ -202,7 +195,7 @@
               <a class="about-p-highlight">Data Scientist Co-op</a> at 
               <a class="about-p-highlight">Cohere Health</a>, where I'm building predictive models for healthcare optimization and developing end-to-end MLOps pipelines.
             </p>
-              
+            
             <p>
               My expertise spans across machine learning, artificial intelligence, and data engineering, with a strong focus on real-world applications that drive business impact. 
               I have extensive experience in building scalable ML models, designing data pipelines, and creating actionable insights from complex datasets. 
@@ -214,7 +207,7 @@
               I'm passionate about leveraging cutting-edge technologies to architect data-driven solutions that optimize operations, enhance user experiences, and drive strategic decision-making. 
               My technical expertise combined with strong problem-solving abilities enables me to transform complex data into actionable business insights.
             </p>
-        </section>
+          </section>
 
 
           <!--
@@ -599,7 +592,7 @@
               <li class="skill-item">
 
                 <div class="skill-icon-box">
-                  <img src="/Users/mohan/NEU/Co-op/Portfolio_website/assets/image-tb/R.png" alt="R icon" width="40">
+                  <img src="./assets/image-tb/R.png" alt="R icon" width="40">
                 </div>
 
                 <div class="skill-content-box">
@@ -623,7 +616,7 @@
               <li class="skill-item">
 
                 <div class="skill-icon-box">
-                  <img src="/Users/mohan/NEU/Co-op/Portfolio_website/assets/image-tb/matlab.png" alt="Matlab icon" width="40">
+                  <img src="./assets/image-tb/matlab.png" alt="Matlab icon" width="40">
                 </div>
 
                 <div class="skill-content-box">
@@ -1126,6 +1119,72 @@
             <ul class="project-posts-list">
 
               <li class="project-post-item">
+                <a href="https://github.com/Mohan-this-side/Jackie-Personal-AI-Voice-Assistant" target="_blank">
+
+                  <figure class="project-banner-box jackie-flowchart">
+                    <img src="assets/images/jackie_flowchart.svg" alt="Jackie AI Voice Assistant" loading="lazy">
+                  </figure>
+
+                  <div class="project-content">
+
+                    <div class="project-meta">
+                      <p class="project-category">AI</p>
+
+                      <span class="dot"></span>
+
+                      <p class="project-category">FastAPI</p>
+                      
+                      <span class="dot"></span>
+
+                      <p class="project-category">WebSocket</p>
+
+                      <span class="dot"></span>
+
+                      <p class="project-category">Groq</p>
+                      
+                    </div>
+
+                    <h3 class="h4 project-item-title">Jackie x AI Voice Assistant</h3>
+                      <p class="project-text">
+                        Built a production-ready AI voice assistant using FastAPI and WebSocket for real-time communication, leveraging Groq's ultra-fast Llama-3.3-70B model for intelligent responses. 
+                        Implemented comprehensive speech-to-text using Groq Whisper with local fallbacks, and high-quality text-to-speech synthesis using Microsoft Edge TTS for natural voice interactions.
+                      </p>
+                      
+                      <p class="project-text">
+                        Deployed on Modal.com serverless infrastructure with encrypted API key management and DuckDuckGo web search integration for current information retrieval. 
+                        The system achieves 3-7 second end-to-end response times with automatic scaling and maintains secure HTTPS/WSS communication protocols.
+                      </p>
+                      
+                      <p class="project-text">
+                        <u>Use Cases:</u> Professional portfolio assistance for recruiters and clients, real-time voice-enabled Q&A for accessibility, automated customer support systems, 
+                        and intelligent virtual receptionists for businesses across healthcare, education, and technology sectors.
+                      </p>
+
+                      <div class="project-tech">
+                        <span class="tech">FastAPI</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">Groq LLM</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">WebSocket</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">Modal.com</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">Whisper STT</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">Edge TTS</span>
+                      </div>
+
+                    </div>
+
+                  </a>
+                </li>
+
+              <li class="project-post-item">
                 <a href="https://github.com/Mohan-this-side/PaperPal_AI_chatbot" target="_blank">
 
                   <figure class="project-banner-box">
@@ -1153,14 +1212,14 @@
 
                     <h3 class="h4 project-item-title">PaperPal AI - will get you direct answers from the pdf documents without any addition information</h3>
                       <p class="project-text">
-                        Developed a Streamlit-based application utilizing Google’s Gemini-PRO model within a 
+                        Developed a Streamlit-based application utilizing Google's Gemini-PRO model within a 
                         Retrieval-Augmented Generation (RAG) framework to extract, analyze, and generate contextually accurate and specific insights from PDF documents.
                       </p>
-                    
+                      
                       <p class="project-text">
                         Integrated features for instant insight generation from PDF uploads and implemented a secure API key input functionality
                       </p>
-                    
+                      
                       <p class="project-text">
                         <u>Industry Use Cases:</u> PaperPal AI excels in scanning legal documents, providing accurate and direct answers to legal cases. 
                         It enhances efficiency by quickly processing extensive texts, allowing legal professionals to focus on critical analytical tasks.
@@ -1182,514 +1241,417 @@
                         <span class="tech">Gemini</span>
                       </div>
 
-                  </div>
-
-                </a>
-              </li>
-
-              <li class="project-post-item">
-                <a href="https://github.com/Mohan-this-side/face-mask-detector-project" target="_blank">
-
-                  <figure class="project-banner-box">
-                    <img src="assets/images/real_time_mask.png" alt="Real-time face mask detector" loading="lazy">
-                  </figure>
-
-                  <div class="project-content">
-
-                    <div class="project-meta">
-                      <p class="project-category">Deep learning</p>
-
-                      <span class="dot"></span>
-
-                      <p class="project-category">Keras</p>
-
-                      <span class="dot"></span>
-
-                      <p class="project-category">SkLearn</p>
-
-                      <p class="project-category">CV2</p>
-
-                      <span class="dot"></span>
-                      <!-- <span class="dot"></span>
-
-                      <p class="project-category">MIA Attacks</p> -->
                     </div>
 
-                    <h3 class="h4 project-item-title">Real-time Face Mask Detector</h3>
+                  </a>
+                </li>
+
+                <li class="project-post-item">
+                  <a href="https://github.com/Mohan-this-side/face-mask-detector-project" target="_blank">
+
+                    <figure class="project-banner-box">
+                      <img src="assets/images/real_time_mask.png" alt="Real-time face mask detector" loading="lazy">
+                    </figure>
+
+                    <div class="project-content">
+
+                      <div class="project-meta">
+                        <p class="project-category">Deep learning</p>
+
+                        <span class="dot"></span>
+
+                        <p class="project-category">Keras</p>
+
+                        <span class="dot"></span>
+
+                        <p class="project-category">SkLearn</p>
+
+                        <p class="project-category">CV2</p>
+
+                        <span class="dot"></span>
+                        <!-- <span class="dot"></span>
+
+                        <p class="project-category">MIA Attacks</p> -->
+                      </div>
+
+                      <h3 class="h4 project-item-title">Real-time Face Mask Detector</h3>
+                        
                       
-                  
-    
-                    
-                      <p class="project-text">
-                        Developed a highly accurate deep learning model for real-time face mask detection, achieving an accuracy rate of 84% using an extensive and diverse image dataset.
-                      </p>
+            
+                      
+                        <p class="project-text">
+                          Developed a highly accurate deep learning model for real-time face mask detection, achieving an accuracy rate of 84% using an extensive and diverse image dataset.
+                        </p>
 
-                      <!-- <p class="project-text">
-                        Implemented item-based unlearning using gradient-based, weights pruning, and resetting techniques. 
-                      </p> -->
+                        <!-- <p class="project-text">
+                          Implemented item-based unlearning using gradient-based, weights pruning, and resetting techniques. 
+                        </p> -->
 
-                      <p class="project-text">
-                        Implemented the model in a real-world application by integrating it with webcam systems, demonstrating its effectiveness in monitoring and ensuring public safety.
-                      </p>
+                        <p class="project-text">
+                          Implemented the model in a real-world application by integrating it with webcam systems, demonstrating its effectiveness in monitoring and ensuring public safety.
+                        </p>
 
-                      <p class="project-text">
-                        Conducted rigorous testing and validation in various environments, showcasing the model's reliability and potential for deployment in public spaces and safety-critical scenarios.
-                      </p>
+                        <p class="project-text">
+                          Conducted rigorous testing and validation in various environments, showcasing the model's reliability and potential for deployment in public spaces and safety-critical scenarios.
+                        </p>
 
+                        
+
+                        <p class="project-text">
+                          <u> Use Cases:</u>  Can be installed on dashcams to monitor drivers, enhancing safety and preventing major 
+                          accidents by ensuring drivers are alert and compliant with safety protocols.
+
+                        </p>
+
+                        <div class="project-tech">
+                          <span class="tech">CascadeClassifier</span>
+                        </div>
+                        <div class="project-tech">
+                          <span class="tech">Numpy</span>
+                        </div>
+                        <div class="project-tech">
+                          <span class="tech">Image Segmentation</span>
+                        </div>
+                        <div class="project-tech">
+                          <span class="tech">Conv2D</span>
+                        </div>
+                        <div class="project-tech">
+                          <span class="tech">Max Pooling 2D</span>
+                        </div>
+                        <div class="project-tech">
+                          <span class="tech">Batch Normalization</span>
+                        </div>
+
+                      </div>
+
+                    </a>
+                  </li>
+
+                   <li class="project-post-item">
+                  <a href="" target="_blank">
+
+                    <figure class="project-banner-box">
+                      <img src="assets/images/driver_project.webp" alt="Driver drowsiness detection system" loading="lazy">
+                    </figure>
+
+                    <div class="project-content">
+
+                      <div class="project-meta">
+                        <p class="project-category">Python</p>
+
+                        <span class="dot"></span>
+
+                        <p class="project-category">CascadeClassifier</p>
+                        
+                        <span class="dot"></span>
+
+                        <p class="project-category">Image Detection</p>
+                        
+                      </div>
+
+                      <h3 class="h4 project-item-title">Driver Drowsiness Detection System</h3>
+                        
+                        <p class="project-text">
+                          Engineered a driver drowsiness detection system using Machine Learning, OpenCV,
+                           and Convolutional Neural Networks (CNN), achieving an accuracy of 87% and integrating an alarm for immediate driver alert.  
+                        </p>
+
+                         <p class="project-text"> 
+                          Improved system reliability by reducing false positives by 10%, enhancing the accuracy and trustworthiness of the drowsiness alerts, and ensuring safer driving conditions. 
+                        </p>
+
+                        <p class="project-text">
+                          Conducted extensive testing and optimization, ensuring the system's robustness and effectiveness in various real-world driving environments and lighting conditions.
+                        </p>
+
+                        <p class="project-text">
+                          <u> Use Cases:</u>  This system reduces false positives by 10%, significantly enhancing driver safety and preventing major accidents on the roads caused by driver drowsiness.
+                        </p>
                       
 
-                      <p class="project-text">
-                        <u> Use Cases:</u>  Can be installed on dashcams to monitor drivers, enhancing safety and preventing major 
-                        accidents by ensuring drivers are alert and compliant with safety protocols.
+                        
 
-                      </p>
+                        <div class="project-tech">
+                          <span class="tech">Python</span>
+                        </div>
+                        <div class="project-tech">
+                          <span class="tech">OS</span>
+                        </div>
+                        <div class="project-tech">
+                          <span class="tech">Pygame</span>
+                        </div>
+                        <div class="project-tech">
+                          <span class="tech">CV2</span>
+                        </div>
+                        <div class="project-tech">
+                          <span class="tech">Mixer</span>
+                        </div>
 
-                      <div class="project-tech">
-                        <span class="tech">CascadeClassifier</span>
-                      </div>
-                      <div class="project-tech">
-                        <span class="tech">Numpy</span>
-                      </div>
-                      <div class="project-tech">
-                        <span class="tech">Image Segmentation</span>
-                      </div>
-                      <div class="project-tech">
-                        <span class="tech">Conv2D</span>
-                      </div>
-                      <div class="project-tech">
-                        <span class="tech">Max Pooling 2D</span>
-                      </div>
-                      <div class="project-tech">
-                        <span class="tech">Batch Normalization</span>
                       </div>
 
-                  </div>
+                    </a>
+                  </li>
 
-                </a>
-              </li>
-
-               <li class="project-post-item">
-                <a href="" target="_blank">
-
-                  <figure class="project-banner-box">
-                    <img src="assets/images/driver_project.webp" alt="Driver drowsiness detection system" loading="lazy">
-                  </figure>
-
-                  <div class="project-content">
-
-                    <div class="project-meta">
-                      <p class="project-category">Python</p>
-
-                      <span class="dot"></span>
-
-                      <p class="project-category">CascadeClassifier</p>
-                      
-                      <span class="dot"></span>
-
-                      <p class="project-category">Image Detection</p>
-                      
-                    </div>
-
-                    <h3 class="h4 project-item-title">Driver Drowsiness Detection System</h3>
-                      
-                      <p class="project-text">
-                        Engineered a driver drowsiness detection system using Machine Learning, OpenCV,
-                         and Convolutional Neural Networks (CNN), achieving an accuracy of 87% and integrating an alarm for immediate driver alert.  
-                      </p>
-
-                       <p class="project-text"> 
-                        Improved system reliability by reducing false positives by 10%, enhancing the accuracy and trustworthiness of the drowsiness alerts, and ensuring safer driving conditions. 
-                      </p>
-
-                      <p class="project-text">
-                        Conducted extensive testing and optimization, ensuring the system's robustness and effectiveness in various real-world driving environments and lighting conditions.
-                      </p>
-
-                      <p class="project-text">
-                        <u> Use Cases:</u>  This system reduces false positives by 10%, significantly enhancing driver safety and preventing major accidents on the roads caused by driver drowsiness.
-                      </p>
-                    
-
-                      
-
-                      <div class="project-tech">
-                        <span class="tech">Python</span>
-                      </div>
-                      <div class="project-tech">
-                        <span class="tech">OS</span>
-                      </div>
-                      <div class="project-tech">
-                        <span class="tech">Pygame</span>
-                      </div>
-                      <div class="project-tech">
-                        <span class="tech">CV2</span>
-                      </div>
-                      <div class="project-tech">
-                        <span class="tech">Mixer</span>
-                      </div>
-
-                  </div>
-
-                </a>
-              </li>
-
-                      <li class="project-post-item">
-          <a href="https://github.com/Mohan-this-side/VideoLLM" target="_blank">
-        
-            <figure class="project-banner-box">
-              <!-- Update the image source and alt text to reflect the VideoLLM project -->
-              <img src="assets/images/VideoLLM.webp" alt="VideoLLM: Multi-Modal Video Ad Classifier" loading="lazy">
-            </figure>
-        
-            <div class="project-content">
-        
-              <div class="project-meta">
-                <p class="project-category">Python</p>
-        
-                <span class="dot"></span>
-        
-                <p class="project-category">PyTorch</p>
-        
-                <span class="dot"></span>
-        
-                <p class="project-category">NLP + CV</p>
-              </div>
-        
-              <h3 class="h4 project-item-title">VideoLLM: Multi-Modal Video Ad Classifier</h3>
-        
-              <p class="project-text">
-                Created a multi-modal classifier that integrates text (DistilBERT) and visual data (ResNet3D) to classify video advertisements based on 21 yes/no questions. Achieved an F1 score of 0.8088 and an accuracy of 0.8184 on test data, excelling in identifying brand mentions, calls to action, and emotional impact.
-              </p>
-        
-              <p class="project-text">
-                Utilized EasyOCR for on-screen text extraction, Whisper for speech-to-text, and DistilBART for summarization, enabling robust analysis of real-world ads that include spoken dialogue, branding visuals, and complex marketing language. 
-              </p>
-        
-              <p class="project-text">
-                <u>Use Cases:</u> Automating analysis of large-scale video ad campaigns for brand compliance checks, emotional impact assessments, and content strategy insights, ultimately helping marketers optimize ad content and improve targeting strategies.
-              </p>
-        
-              <div class="project-tech">
-                <span class="tech">Python</span>
-              </div>
-              <div class="project-tech">
-                <span class="tech">PyTorch</span>
-              </div>
-              <div class="project-tech">
-                <span class="tech">DistilBERT</span>
-              </div>
-              <div class="project-tech">
-                <span class="tech">ResNet3D</span>
-              </div>
-              <div class="project-tech">
-                <span class="tech">EasyOCR</span>
-              </div>
-              <div class="project-tech">
-                <span class="tech">Whisper</span>
-              </div>
-              <div class="project-tech">
-                <span class="tech">DistilBART</span>
-              </div>
-        
-            </div>
-        
-          </a>
-        </li>
-
-              <li class="project-post-item">
-  <a href="https://github.com/Mohan-this-side/Predictive_modeling" target="_blank">
-
-    <figure class="project-banner-box">
-      <!-- Update the image source and alt text to reflect the Predictive Modeling project -->
-      <img src="assets/images/predictive_modeling.webp" alt="Predictive Modeling for Property Interaction" loading="lazy">
-    </figure>
-
-    <div class="project-content">
-
-      <div class="project-meta">
-        <p class="project-category">Python</p>
-
-        <span class="dot"></span>
-
-        <p class="project-category">Machine Learning</p>
-
-        <span class="dot"></span>
-
-        <p class="project-category">Data Engineering</p>
-      </div>
-
-      <h3 class="h4 project-item-title">Predictive Modeling for Property Interaction</h3>
-
-      <p class="project-text">
-        Developed a predictive model to forecast user interactions with properties based on various features such as property details, interaction history, and photo counts. The model uses classical machine learning techniques to predict interactions within 3 and 7 days, offering insights into user engagement with real estate listings.
-      </p>
-
-      <p class="project-text">
-        The project involved thorough data preprocessing, including outlier removal, one-hot encoding, and feature scaling with MinMaxScaler. The dataset was composed of property data, interaction logs, and photo data, and multiple models were trained and evaluated to optimize prediction accuracy.
-      </p>
-
-      <p class="project-text">
-        <u>Use Cases:</u> The predictive model helps real estate platforms and property agents by forecasting which properties are likely to receive more interactions, assisting in targeted marketing and property management strategies.
-      </p>
-
-      <div class="project-tech">
-        <span class="tech">Python</span>
-      </div>
-      <div class="project-tech">
-        <span class="tech">Pandas</span>
-      </div>
-      <div class="project-tech">
-        <span class="tech">NumPy</span>
-      </div>
-      <div class="project-tech">
-        <span class="tech">Matplotlib</span>
-      </div>
-      <div class="project-tech">
-        <span class="tech">Scikit-learn</span>
-      </div>
-      <div class="project-tech">
-        <span class="tech">Seaborn</span>
-      </div>
-
-    </div>
-
-  </a>
-</li>
-              <li class="project-post-item">
-  <a href="https://github.com/Mohan-this-side/company-similarity-app" target="_blank">
-
-    <figure class="project-banner-box">
-      <!-- Update the image source and alt text to reflect the Company Similarity App project -->
-      <img src="assets/images/similarity_finder.png" alt="Company Similarity Finder" loading="lazy">
-    </figure>
-
-    <div class="project-content">
-
-      <div class="project-meta">
-        <p class="project-category">Python</p>
-
-        <span class="dot"></span>
-
-        <p class="project-category">Streamlit</p>
-
-        <span class="dot"></span>
-
-        <p class="project-category">NLP</p>
-        
-        <span class="dot"></span>
-
-        <p class="project-category">FAISS</p>
-      </div>
-
-      <h3 class="h4 project-item-title">Company Similarity Finder Web Application</h3>
-
-      <p class="project-text">
-        Developed an innovative web application to find and explore companies similar to a given company, based on their descriptions. The app utilizes advanced NLP techniques, particularly Sentence-BERT (SBERT), to generate embeddings of company descriptions and uses FAISS for efficient similarity searches on large datasets.
-      </p>
-
-      <p class="project-text">
-        The project efficiently handles large datasets (55,000+ companies) by caching precomputed embeddings and utilizing FAISS for fast nearest neighbor searches. The app is built with Streamlit, providing an intuitive user interface for exploring company similarities and visualizing results.
-      </p>
-
-      <p class="project-text">
-        <u>Use Cases:</u> This tool enables users, such as investors or market researchers, to find companies with similar business models, products, and services, streamlining market analysis and helping with strategic decision-making.
-      </p>
-
-      <div class="project-tech">
-        <span class="tech">Python</span>
-      </div>
-      <div class="project-tech">
-        <span class="tech">Streamlit</span>
-      </div>
-      <div class="project-tech">
-        <span class="tech">Sentence-BERT</span>
-      </div>
-      <div class="project-tech">
-        <span class="tech">FAISS</span>
-      </div>
-      <div class="project-tech">
-        <span class="tech">Plotly</span>
-      </div>
-
-    </div>
-
-  </a>
-</li>
-
-
- 
-
-            </ul>
-
-          </section>
-
-        </article>
-
-
-        <!--
-          - #RESEARCH
-        -->
-
-        <!-- <article class="research" data-page="research">
-          <header>
-            <h2 class="h2 article-title">Research</h2>
-          </header>
-
-          <section class="research-posts">
-
-            <ul class="research-posts-list">
-
+                          <li class="project-post-item">
+                <a href="https://github.com/Mohan-this-side/VideoLLM" target="_blank">
               
-
-              <li class="research-post-item">
-                <a href="https://www.mdpi.com/2079-9292/12/4/909" target="_blank">
-                  <figure class="research-banner-box">
-                    <img src="./assets/images-tb/mdpi.png" alt="Journal" loading="lazy">
-                  </figure>
-                  <div class="research-content">
-                    <div class="research-meta">
-                      <p class="research-category">Electronics Journal by MDPI</p>
-                      <span class="dot"></span>
-                      <time datetime="2023-02-03">Feb 10, 2023</time>
-                    </div>
-                    <h5 class="h5 research-item-title">Optimized and Efficient Color Prediction Algorithms Using Mask R-CNN</h5>
-                    <p class="research-text">
-                      In this Journal, we introduced novel techniques for predicting the dominant color of objects in images, 
-                      as well as pixel extraction concepts named Average Windowing and Pixel Skip, which allow these algorithms 
-                      to be 20% more time-optimized and 8% more efficient. Performed mathematical modeling and tested the 
-                      efficiency of the proposed algorithms using the Mask R-CNN framework and drew comparisons with techniques 
-                      such as K-Means, MeanShift, Fuzzy C-Means, Gaussian Blur, and Minibatch K-means. 
-                    </p>
+                <figure class="project-banner-box">
+                  <!-- Update the image source and alt text to reflect the VideoLLM project -->
+                  <img src="assets/images/VideoLLM.webp" alt="VideoLLM: Multi-Modal Video Ad Classifier" loading="lazy">
+                </figure>
+            
+                <div class="project-content">
+            
+                  <div class="project-meta">
+                    <p class="project-category">Python</p>
+            
+                    <span class="dot"></span>
+            
+                    <p class="project-category">PyTorch</p>
+            
+                    <span class="dot"></span>
+            
+                    <p class="project-category">NLP + CV</p>
                   </div>
-                </a>
-              </li>
-
-              <li class="research-post-item">
-                <a href="https://www.springerprofessional.de/en/ros-based-gui-controlled-robot-for-indoor-mapping-and-navigation/19223364" target="_blank">
-                  <figure class="research-banner-box">
-                    <img src="./assets/images-tb/rosbased.png" alt="ROS-based GUI" loading="lazy">
-                  </figure>
-                  <div class="research-content">
-                    <div class="research-meta">
-                      <p class="research-category">Research Paper at Springer Professional ICCNCT 2020</p>
-                      <span class="dot"></span>
-                      <time datetime="2023-05-17">Jun 03, 2021</time>
-                    </div>
-                    <h5 class="h5 research-item-title">ROS-Based GUI Controlled Robot for Indoor Mapping and Navigation</h5>
-                    <p class="research-text">
-                      This research reviews the design of an autonomous mobile robot controlled by a graphical user 
-                      interface(GUI) which possesses the ability to autonomously go to a location in a created environment 
-                      when it receives the command through GUI. The model is implemented using Python, C++, and Electron (GUI) framework. 
-                      Published at the Computer Networks and Inventive Communication Technologies Proceedings of Third ICCNCT 2020.                        
-                    </p>
+            
+                  <h3 class="h4 project-item-title">VideoLLM: Multi-Modal Video Ad Classifier</h3>
+            
+                  <p class="project-text">
+                    Created a multi-modal classifier that integrates text (DistilBERT) and visual data (ResNet3D) to classify video advertisements based on 21 yes/no questions. Achieved an F1 score of 0.8088 and an accuracy of 0.8184 on test data, excelling in identifying brand mentions, calls to action, and emotional impact.
+                  </p>
+            
+                  <p class="project-text">
+                    Utilized EasyOCR for on-screen text extraction, Whisper for speech-to-text, and DistilBART for summarization, enabling robust analysis of real-world ads that include spoken dialogue, branding visuals, and complex marketing language. 
+                  </p>
+            
+                  <p class="project-text">
+                    <u>Use Cases:</u> Automating analysis of large-scale video ad campaigns for brand compliance checks, emotional impact assessments, and content strategy insights, ultimately helping marketers optimize ad content and improve targeting strategies.
+                  </p>
+            
+                  <div class="project-tech">
+                    <span class="tech">Python</span>
                   </div>
-                </a>
-              </li>
-
-              <li class="research-post-item">
-                <a href="https://www.springerprofessional.de/en/speech-and-kinova-arm-based-interactive-system-with-person-track/19223362" target="_blank">
-                  <figure class="research-banner-box">
-                    <!-- Ref: https://arxiv.org/pdf/2103.12801.pdf 
-                    <img src="./assets/images-tb/speech.png" alt="variable_recovery" loading="lazy">
-                  </figure>
-                  <div class="research-content">
-                    <div class="research-meta">
-                      <p class="research-category">Research Paper at Springer Professional ICCNCT 2020</p>
-                      <span class="dot"></span>
-                      <time datetime="2023-05-10">Jun 03, 2021</time>
-                    </div>
-                    <h5 class="h5 research-item-title">Speech and Kinova Arm-Based Interactive System with Person Tracking                    </h5>
-                    <p class="research-text">
-                      This research deals with the implementation of a leg-tracking algorithm to detect, classify, and 
-                      track the 3D coordinates of a person in real-time using Kalman Filter, global nearest neighbor, and LIDAR data.
-                      Path tracking is integrated with a speech module (Using Google Speech to Text API) which enables the robot to 
-                      welcome and greet people with a handshake. The entire project is implemented in Linux using Python, ROS, and C++.  
-                    </p>
+                  <div class="project-tech">
+                    <span class="tech">PyTorch</span>
                   </div>
-                </a>
-              </li>
-
-              <li class="research-post-item">
-                <a href="https://ieeexplore.ieee.org/document/9117538" target="_blank">
-                  <figure class="research-banner-box">
-                    <img src="./assets/images-tb/donationbox.png" alt="InstructABSA" loading="lazy">
-                  </figure>
-                  <div class="research-content">
-                    <div class="research-meta">
-                      <p class="research-category">IEEE 2019 | Research Paper</p>
-                      <span class="dot"></span>
-                      <time datetime="2023-11-13">Nov 25, 2019</time>
-                    </div>
-                    <h5 class="h5 research-item-title">Voice Enabled Donation Box</h5>
-                    <p class="research-text">
-                      Invented a Micro-controller based voice-enabled donation box that filters data from external sensors using Python to detect people approaching the box and request donations in 6 different languages. 
-                      Published this research at the 8th International Conference on System Modeling & Advancement in Research Trends (SMART) by IEEE (2019). 
-                      We have further worked on web scraping and data mining techniques to identify regional calamities from news websites.
-                    </p>
+                  <div class="project-tech">
+                    <span class="tech">DistilBERT</span>
                   </div>
-                </a>
-              </li>
+                  <div class="project-tech">
+                    <span class="tech">ResNet3D</span>
+                  </div>
+                  <div class="project-tech">
+                    <span class="tech">EasyOCR</span>
+                  </div>
+                  <div class="project-tech">
+                    <span class="tech">Whisper</span>
+                  </div>
+                  <div class="project-tech">
+                    <span class="tech">DistilBART</span>
+                  </div>
+            
+                </div>
+            
+              </a>
+            </li>
+
+                  <li class="project-post-item">
+                <a href="https://github.com/Mohan-this-side/Predictive_modeling" target="_blank">
+
+                <figure class="project-banner-box">
+                  <!-- Update the image source and alt text to reflect the Predictive Modeling project -->
+                  <img src="assets/images/predictive_modeling.webp" alt="Predictive Modeling for Property Interaction" loading="lazy">
+                </figure>
+
+                <div class="project-content">
+
+                <div class="project-meta">
+                  <p class="project-category">Python</p>
+
+                  <span class="dot"></span>
+
+                  <p class="project-category">Machine Learning</p>
+
+                  <span class="dot"></span>
+
+                  <p class="project-category">Data Engineering</p>
+                </div>
+
+                <h3 class="h4 project-item-title">Predictive Modeling for Property Interaction</h3>
+
+                <p class="project-text">
+                  Developed a predictive model to forecast user interactions with properties based on various features such as property details, interaction history, and photo counts. The model uses classical machine learning techniques to predict interactions within 3 and 7 days, offering insights into user engagement with real estate listings.
+                </p>
+
+                <p class="project-text">
+                  The project involved thorough data preprocessing, including outlier removal, one-hot encoding, and feature scaling with MinMaxScaler. The dataset was composed of property data, interaction logs, and photo data, and multiple models were trained and evaluated to optimize prediction accuracy.
+                </p>
+
+                <p class="project-text">
+                  <u>Use Cases:</u> The predictive model helps real estate platforms and property agents by forecasting which properties are likely to receive more interactions, assisting in targeted marketing and property management strategies.
+                </p>
+
+                <div class="project-tech">
+                  <span class="tech">Python</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech">Pandas</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech">NumPy</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech">Matplotlib</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech">Scikit-learn</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech">Seaborn</span>
+                </div>
+
+                </div>
+
+              </a>
+            </li>
+                  <li class="project-post-item">
+                <a href="https://github.com/Mohan-this-side/company-similarity-app" target="_blank">
+
+                <figure class="project-banner-box">
+                  <!-- Update the image source and alt text to reflect the Company Similarity App project -->
+                  <img src="assets/images/similarity_finder.png" alt="Company Similarity Finder" loading="lazy">
+                </figure>
+
+                <div class="project-content">
+
+                <div class="project-meta">
+                  <p class="project-category">Python</p>
+
+                  <span class="dot"></span>
+
+                  <p class="project-category">Streamlit</p>
+
+                  <span class="dot"></span>
+
+                  <p class="project-category">NLP</p>
+                  
+                  <span class="dot"></span>
+
+                  <p class="project-category">FAISS</p>
+                </div>
+
+                <h3 class="h4 project-item-title">Company Similarity Finder Web Application</h3>
+
+                <p class="project-text">
+                  Developed an innovative web application to find and explore companies similar to a given company, based on their descriptions. The app utilizes advanced NLP techniques, particularly Sentence-BERT (SBERT), to generate embeddings of company descriptions and uses FAISS for efficient similarity searches on large datasets.
+                </p>
+
+                <p class="project-text">
+                  The project efficiently handles large datasets (55,000+ companies) by caching precomputed embeddings and utilizing FAISS for fast nearest neighbor searches. The app is built with Streamlit, providing an intuitive user interface for exploring company similarities and visualizing results.
+                </p>
+
+                <p class="project-text">
+                  <u>Use Cases:</u> This tool enables users, such as investors or market researchers, to find companies with similar business models, products, and services, streamlining market analysis and helping with strategic decision-making.
+                </p>
+
+                <div class="project-tech">
+                  <span class="tech">Python</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech">Streamlit</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech">Sentence-BERT</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech">FAISS</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech">Plotly</span>
+                </div>
+
+                </div>
+
+              </a>
+            </li>
+
 
             </ul>
+
           </section>
-        </article>
-        
-        <!--
-          - #CONTACT
-        -->
 
-        <!-- <article class="contact" data-page="contact">
+        </div>
 
-          <header>
-            <h2 class="h2 article-title">Contact</h2>
-          </header>
-
-          <section class="mapbox" data-mapbox>
-            <figure>
-              <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3093.2846561753713!2d-86.52558222406367!3d39.16824903067752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886c66c26789ad33%3A0x3499a08bb315d436!2sIndiana%20University%20Bloomington!5e0!3m2!1sen!2sus!4v1708277453061!5m2!1sen!2sus" 
-              width="600" height="450" style="border:0;" 
-              allowfullscreen="" loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- Jackie AI Assistant Sidebar -->
+        <aside class="sidebar jackie-sidebar" data-sidebar="jackie">
+          <div class="sidebar-info">
+            <figure class="avatar-box">
+              <!-- Use the uploaded avatar -->
+              <img src="assets/images/jackie_avatar.png" alt="Jackie Avatar" width="150">
             </figure>
-          </section>
-
-          <section class="contact-form">
-
-            <h3 class="h3 form-title">Contact Form</h3>
-
-            <form 
-              action="https://forms.gle/bd9eDk3t8ZbHHkYm8" 
-              class="form" target="_blank"
-              data-form>
-
-              <div class="input-wrapper">
-                <input type="text" name="entry.1325375650" class="form-input" placeholder="Full name" required data-form-input>
-
-                <input type="email" name="entry.45159176" class="form-input" placeholder="Email address" required data-form-input>
-              </div>
-
-              <textarea name="entry.2104378170" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-              <button class="form-btn" type="submit" disabled data-form-btn>
-                <ion-icon name="paper-plane"></ion-icon>
-                <span>Send Message</span>
-              </button>
-
-            </form>
-
-          </section>
-
-        </article> -->
+            <div class="info-content">
+              <h1 class="name" title="Jackie">Jackie</h1>
+              <p class="title">Mohan's Personal AI Assistant</p>
+            </div>
+            <button class="info_more-btn" data-sidebar-btn>
+              <span>Show Contacts</span>
+              <ion-icon name="chevron-down"></ion-icon>
+            </button>
+          </div>
+          
+          <div class="sidebar-info_more">
+            <div class="separator"></div>
+            <ul class="contacts-list">
+              <li class="contact-item">
+                <div class="icon-box">
+                  <ion-icon name="chatbubbles-outline"></ion-icon>
+                </div>
+                <div class="contact-info">
+                  <p class="contact-title">Ask About</p>
+                  <p class="contact-link">Mohan's Experience & Skills</p>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="icon-box">
+                  <ion-icon name="bulb-outline"></ion-icon>
+                </div>
+                <div class="contact-info">
+                  <p class="contact-title">Expertise</p>
+                  <p class="contact-link">AI, Data Science, Projects</p>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="icon-box">
+                  <ion-icon name="mic-outline"></ion-icon>
+                </div>
+                <div class="contact-info">
+                  <p class="contact-title">Voice Chat</p>
+                  <p class="contact-link">Talk with Jackie</p>
+                </div>
+              </li>
+            </ul>
+            
+            <div class="separator"></div>
+            
+            <!-- Jackie Status Display -->
+            <div id="jackieStatus" class="jackie-status">
+              🤖 Initializing Jackie...
+            </div>
+            
+            <div class="jackie-buttons-container">
+              <button id="jackieTalkBtn" class="jackie-btn">Talk</button>
+              <button id="jackieTerminateBtn" class="jackie-btn terminate">Terminate</button>
+            </div>
+          </div>
+        </aside>
 
       </div>
 
-    </main>
+          </main>
 
   </div>
 
   <!-- scripts -->
-  <script src="assets/js/particles.js"></script>
   <script src="assets/js/app.js"></script>
 
   <!--
@@ -1702,6 +1664,9 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Load Jackie AI Assistant JS -->
+  <script src="assets/js/jackie.js"></script>
 
 </body>
 </html>
