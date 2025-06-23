@@ -1647,6 +1647,72 @@
 
       </div>
 
+      <!-- Mobile Floating Jackie Button -->
+      <button class="jackie-floating-btn" id="mobileJackieBtn" aria-label="Open Jackie AI Assistant">
+        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+      </button>
+
+      <!-- Mobile Jackie Modal -->
+      <div class="jackie-modal-overlay" id="jackieModalOverlay">
+        <div class="jackie-modal">
+          <button class="jackie-modal-close" id="jackieModalClose" aria-label="Close Jackie">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+          
+          <div class="sidebar-info">
+            <figure class="avatar-box">
+              <img src="assets/images/jackie_avatar.png" alt="Jackie Avatar">
+            </figure>
+            <div class="info-content">
+              <h1 class="name" title="Jackie">Jackie</h1>
+              <p class="title">Mohan's Personal AI Assistant</p>
+            </div>
+          </div>
+          
+          <div class="separator"></div>
+          
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+              </div>
+              <div class="contact-info">
+                <p class="contact-title">Ask About</p>
+                <p class="contact-link">Mohan's Experience & Skills</p>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="bulb-outline"></ion-icon>
+              </div>
+              <div class="contact-info">
+                <p class="contact-title">Expertise</p>
+                <p class="contact-link">AI, Data Science, Projects</p>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mic-outline"></ion-icon>
+              </div>
+              <div class="contact-info">
+                <p class="contact-title">Voice Chat</p>
+                <p class="contact-link">Talk with Jackie</p>
+              </div>
+            </li>
+          </ul>
+          
+          <!-- Mobile Jackie Status Display -->
+          <div id="mobileJackieStatus" class="jackie-status">
+            🤖 Initializing Jackie...
+          </div>
+          
+          <div class="jackie-buttons-container">
+            <button id="mobileJackieTalkBtn" class="jackie-btn">Talk</button>
+            <button id="mobileJackieTerminateBtn" class="jackie-btn terminate">Terminate</button>
+          </div>
+        </div>
+      </div>
+
           </main>
 
   </div>

@@ -2052,3 +2052,575 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 /* End Jackie Styles */
+
+/* Mobile Responsive Design - Jackie Floating Button & Modal */
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Mobile Breakpoints:
+   - Mobile: 320px - 767px
+   - Tablet: 768px - 1199px  
+   - Desktop: 1200px+
+*/
+
+/* ============================================
+   MOBILE FLOATING JACKIE BUTTON
+   ============================================ */
+
+/* Floating Jackie Button - Only visible on mobile */
+.jackie-floating-btn {
+  display: none; /* Hidden by default on desktop */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: var(--orange-yellow-crayola);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 12px hsla(45, 100%, 72%, 0.4);
+  transition: all 0.3s ease;
+  font-size: 24px;
+  color: var(--smoky-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jackie-floating-btn:hover {
+  background: var(--vegas-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px hsla(45, 100%, 72%, 0.6);
+}
+
+.jackie-floating-btn:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   MOBILE JACKIE MODAL
+   ============================================ */
+
+/* Modal Overlay */
+.jackie-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.jackie-modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Modal Content */
+.jackie-modal {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: var(--shadow-5);
+  transform: translateY(50px);
+  transition: transform 0.3s ease;
+}
+
+.jackie-modal-overlay.active .jackie-modal {
+  transform: translateY(0);
+}
+
+/* Modal Close Button */
+.jackie-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--light-gray);
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.jackie-modal-close:hover {
+  background: var(--jet);
+  color: var(--white-2);
+}
+
+/* Modal Jackie Content */
+.jackie-modal .sidebar-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.jackie-modal .avatar-box {
+  border-radius: 30px;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px auto;
+  background: transparent;
+}
+
+.jackie-modal .avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.jackie-modal .info-content .name {
+  color: var(--white-2);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-500);
+  margin-bottom: 8px;
+}
+
+.jackie-modal .info-content .title {
+  color: var(--white-1);
+  background: var(--onyx);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin: 0 auto 15px auto;
+  width: max-content;
+}
+
+.jackie-modal .contacts-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.jackie-modal .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.jackie-modal .icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--border-gradient-onyx);
+  font-size: 16px;
+}
+
+.jackie-modal .contact-info {
+  flex: 1;
+}
+
+.jackie-modal .contact-title {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.jackie-modal .contact-info :is(.contact-link, time, address) {
+  color: var(--white-2);
+  font-size: var(--fs-7);
+}
+
+.jackie-modal .jackie-status {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 15px 0 10px 0;
+  background: var(--eerie-black-2);
+  border-radius: 8px;
+  text-align: center;
+  font-size: var(--fs-8);
+  color: var(--white-2);
+  border: 1px solid var(--jet);
+  min-height: 16px;
+}
+
+.jackie-modal .jackie-buttons-container {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.jackie-modal .jackie-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 2px solid var(--orange-yellow-crayola);
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.jackie-modal .jackie-btn:hover {
+  background: var(--vegas-gold);
+  border-color: var(--vegas-gold);
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   HAMBURGER MENU FOR MOBILE NAVIGATION
+   ============================================ */
+
+.mobile-nav-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--orange-yellow-crayola);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1100;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.mobile-nav-toggle span {
+  width: 20px;
+  height: 2px;
+  background: var(--smoky-black);
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ============================================
+   MOBILE BREAKPOINTS & RESPONSIVE LAYOUT
+   ============================================ */
+
+/* Mobile Phones: 320px - 767px */
+@media (max-width: 767px) {
+  
+  /* Show mobile controls */
+  .jackie-floating-btn {
+    display: flex !important;
+  }
+  
+  .mobile-nav-toggle {
+    display: flex;
+  }
+  
+  /* Hide desktop Jackie sidebar on mobile */
+  .sidebar.jackie-sidebar {
+    display: none !important;
+  }
+  
+  /* Adjust main layout for mobile */
+  main {
+    flex-direction: column;
+    padding: 80px 15px 20px 15px;
+    gap: 20px;
+  }
+  
+  /* Main profile sidebar adjustments */
+  .sidebar {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    position: relative;
+    top: auto;
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Main content full width on mobile */
+  .main-content {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Mobile typography adjustments */
+  :root {
+    --fs-1: 22px;
+    --fs-2: 18px;
+    --fs-3: 16px;
+    --fs-4: 15px;
+    --fs-5: 14px;
+    --fs-6: 13px;
+    --fs-7: 12px;
+    --fs-8: 11px;
+  }
+  
+  /* Navigation improvements */
+  .navbar-list {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .navbar-link {
+    font-size: var(--fs-6);
+    padding: 8px 12px;
+  }
+  
+  /* Project grid mobile layout */
+  .project-posts-list {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+  
+  /* Service items mobile layout */
+  .service-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Skills mobile layout */
+  .skill-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  /* Timeline mobile adjustments */
+  .timeline-list {
+    margin-left: 20px;
+  }
+  
+  .timeline-item:not(:last-child)::before {
+    left: -15px;
+  }
+  
+  /* Touch-friendly buttons */
+  button, .jackie-btn, .navbar-link {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+}
+
+/* Tablets: 768px - 1199px */
+@media (min-width: 768px) and (max-width: 1199px) {
+  
+  /* Show floating Jackie button on tablets */
+  .jackie-floating-btn {
+    display: flex !important;
+  }
+  
+  /* Hide desktop Jackie sidebar on tablets */
+  .sidebar.jackie-sidebar {
+    display: none !important;
+  }
+  
+  /* Tablet layout adjustments */
+  main {
+    flex-direction: row;
+    gap: 25px;
+    padding: 60px 20px;
+  }
+  
+  .sidebar {
+    min-width: 280px;
+    width: 280px;
+  }
+  
+  .main-content {
+    flex: 1;
+    max-width: none;
+  }
+  
+  /* Project grid for tablets */
+  .project-posts-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+
+/* Desktop: 1200px+ */
+@media (min-width: 1200px) {
+  
+  /* Hide mobile controls on desktop */
+  .jackie-floating-btn {
+    display: none !important;
+  }
+  
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+  
+  .jackie-modal-overlay {
+    display: none !important;
+  }
+  
+  /* Show desktop Jackie sidebar */
+  .sidebar.jackie-sidebar {
+    display: flex !important;
+  }
+  
+  /* Desktop layout is preserved exactly as is */
+  
+}
+
+/* ============================================
+   MOBILE ACCESSIBILITY & TOUCH IMPROVEMENTS
+   ============================================ */
+
+@media (max-width: 767px) {
+  
+  /* Improved touch targets */
+  .info_more-btn,
+  .contact-item,
+  .social-item .social-link {
+    min-height: 44px;
+    padding: 10px;
+  }
+  
+  /* Better mobile scrolling */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Mobile-optimized animations */
+  .project-post-item > a:hover .project-banner-box img,
+  .research-post-item > a:hover .research-banner-box img {
+    transform: none; /* Disable hover effects on mobile */
+  }
+  
+  /* Mobile form improvements */
+  .form-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Mobile navbar improvements */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--eerie-black-1);
+    margin-bottom: 20px;
+  }
+  
+}
+
+/* ============================================
+   HIGH DPI DISPLAYS & RETINA SUPPORT
+   ============================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  
+  .jackie-floating-btn {
+    box-shadow: 0 2px 6px hsla(45, 100%, 72%, 0.4);
+  }
+  
+  .avatar-box img,
+  .jackie-modal .avatar-box img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+  
+}
+
+/* ============================================
+   MOBILE LANDSCAPE ORIENTATION
+   ============================================ */
+
+@media (max-width: 767px) and (orientation: landscape) {
+  
+  main {
+    padding: 60px 20px 20px 20px;
+  }
+  
+  .jackie-floating-btn {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+  
+  .sidebar {
+    padding-top: 15px;
+  }
+  
+}
+
+/* ============================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-width: 767px) {
+  
+  /* Reduce animations for better performance */
+  * {
+    animation-duration: 0.1s !important;
+    transition-duration: 0.1s !important;
+  }
+  
+  /* Optimize background effects */
+  #particles-js {
+    display: none; /* Hide particles on mobile for better performance */
+  }
+  
+  /* Optimize images */
+  img {
+    image-rendering: optimizeSpeed;
+  }
+  
+}
+
+/* ============================================
+   MOBILE DARK MODE SUPPORT
+   ============================================ */
+
+@media (max-width: 767px) and (prefers-color-scheme: dark) {
+  
+  .jackie-modal {
+    background: var(--smoky-black);
+    border-color: var(--onyx);
+  }
+  
+  .mobile-nav-toggle {
+    background: var(--vegas-gold);
+  }
+  
+}

@@ -3,6 +3,7 @@
 
 // Global variables
 let talkBtn, terminateBtn;
+let mobileTalkBtn, mobileTerminateBtn, mobileFloatingBtn, mobileModal, mobileModalClose;
 let isRecording = false;
 let isProcessing = false;
 let isSpeaking = false;
@@ -13,6 +14,7 @@ let websocket = null;
 let hasGreeted = false;
 let localMode = false;
 let recognition = null;
+let isMobile = false;
 
 
 
@@ -25,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function initializeJackieWithRetry() {
+  // Detect if we're on mobile
+  isMobile = window.innerWidth <= 767;
+  
   // Ensure Jackie sidebar is expanded and handle its button
   const jackieSidebar = document.querySelector('.sidebar.jackie-sidebar');
   if (jackieSidebar) {
@@ -40,10 +45,22 @@ function initializeJackieWithRetry() {
     }
   }
   
+  // Get desktop elements
   talkBtn = document.getElementById('jackieTalkBtn');
   terminateBtn = document.getElementById('jackieTerminateBtn');
   
-  if (!talkBtn || !terminateBtn) {
+  // Get mobile elements
+  mobileTalkBtn = document.getElementById('mobileJackieTalkBtn');
+  mobileTerminateBtn = document.getElementById('mobileJackieTerminateBtn');
+  mobileFloatingBtn = document.getElementById('mobileJackieBtn');
+  mobileModal = document.getElementById('jackieModalOverlay');
+  mobileModalClose = document.getElementById('jackieModalClose');
+  
+  // Check if required elements exist (either desktop or mobile)
+  const hasDesktopElements = talkBtn && terminateBtn;
+  const hasMobileElements = mobileTalkBtn && mobileTerminateBtn && mobileFloatingBtn;
+  
+  if (!hasDesktopElements && !hasMobileElements) {
     setTimeout(initializeJackieWithRetry, 1000);
     return;
   }
@@ -54,6 +71,7 @@ function initializeJackieWithRetry() {
 
 // Setup event listeners
 function setupEventListeners() {
+  // Desktop event listeners
   if (talkBtn) {
     talkBtn.addEventListener('click', toggleTalk);
   }
@@ -62,16 +80,48 @@ function setupEventListeners() {
     terminateBtn.addEventListener('click', stopCurrentAudio);
   }
 
-  // Keyboard shortcuts
+  // Mobile event listeners
+  if (mobileTalkBtn) {
+    mobileTalkBtn.addEventListener('click', toggleTalk);
+  }
+  
+  if (mobileTerminateBtn) {
+    mobileTerminateBtn.addEventListener('click', stopCurrentAudio);
+  }
+
+  if (mobileFloatingBtn) {
+    mobileFloatingBtn.addEventListener('click', openMobileModal);
+  }
+
+  if (mobileModalClose) {
+    mobileModalClose.addEventListener('click', closeMobileModal);
+  }
+
+  if (mobileModal) {
+    mobileModal.addEventListener('click', function(e) {
+      if (e.target === mobileModal) {
+        closeMobileModal();
+      }
+    });
+  }
+
+  // Handle window resize for mobile detection
+  window.addEventListener('resize', function() {
+    isMobile = window.innerWidth <= 767;
+  });
+
+  // Keyboard shortcuts (only for desktop)
   document.addEventListener('keydown', function(e) {
-    if (e.code === 'Space' && !isRecording && !isProcessing) {
-      e.preventDefault();
-      toggleTalk();
-    }
-    
-    if (e.code === 'Escape' && isSpeaking) {
-      e.preventDefault();
-      stopCurrentAudio();
+    if (!isMobile) {
+      if (e.code === 'Space' && !isRecording && !isProcessing) {
+        e.preventDefault();
+        toggleTalk();
+      }
+      
+      if (e.code === 'Escape' && isSpeaking) {
+        e.preventDefault();
+        stopCurrentAudio();
+      }
     }
   });
 
@@ -542,30 +592,85 @@ function generateLocalResponse(userText) {
   }, 1000);
 }
 
+// Mobile modal functions
+function openMobileModal() {
+  if (mobileModal) {
+    mobileModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+}
+
+function closeMobileModal() {
+  if (mobileModal) {
+    mobileModal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+}
+
 // Update button states
 function updateButtons() {
-  if (!talkBtn || !terminateBtn) return;
-  
-  if (isRecording) {
-    talkBtn.textContent = '🔴 Stop';
-    talkBtn.classList.add('recording');
-    talkBtn.disabled = false;
-    terminateBtn.disabled = true;
-  } else if (isProcessing) {
-    talkBtn.textContent = '⚡ Processing...';
-    talkBtn.classList.remove('recording');
-    talkBtn.disabled = true;
-    terminateBtn.disabled = true;
-  } else if (isSpeaking) {
-    talkBtn.textContent = '🎤 Interrupt & Talk';
-    talkBtn.classList.remove('recording');
-    talkBtn.disabled = false;
-    terminateBtn.disabled = false;
-  } else {
-    talkBtn.textContent = 'Talk';
-    talkBtn.classList.remove('recording');
-    talkBtn.disabled = false;
-    terminateBtn.disabled = true;
+  // Update desktop buttons
+  if (talkBtn && terminateBtn) {
+    if (isRecording) {
+      talkBtn.textContent = '🔴 Stop';
+      talkBtn.classList.add('recording');
+      talkBtn.disabled = false;
+      terminateBtn.disabled = true;
+    } else if (isProcessing) {
+      talkBtn.textContent = '⚡ Processing...';
+      talkBtn.classList.remove('recording');
+      talkBtn.disabled = true;
+      terminateBtn.disabled = true;
+    } else if (isSpeaking) {
+      talkBtn.textContent = '🎤 Interrupt & Talk';
+      talkBtn.classList.remove('recording');
+      talkBtn.disabled = false;
+      terminateBtn.disabled = false;
+    } else {
+      talkBtn.textContent = 'Talk';
+      talkBtn.classList.remove('recording');
+      talkBtn.disabled = false;
+      terminateBtn.disabled = true;
+    }
+  }
+
+  // Update mobile buttons
+  if (mobileTalkBtn && mobileTerminateBtn) {
+    if (isRecording) {
+      mobileTalkBtn.textContent = '🔴 Stop';
+      mobileTalkBtn.classList.add('recording');
+      mobileTalkBtn.disabled = false;
+      mobileTerminateBtn.disabled = true;
+    } else if (isProcessing) {
+      mobileTalkBtn.textContent = '⚡ Processing...';
+      mobileTalkBtn.classList.remove('recording');
+      mobileTalkBtn.disabled = true;
+      mobileTerminateBtn.disabled = true;
+    } else if (isSpeaking) {
+      mobileTalkBtn.textContent = '🎤 Interrupt & Talk';
+      mobileTalkBtn.classList.remove('recording');
+      mobileTalkBtn.disabled = false;
+      mobileTerminateBtn.disabled = false;
+    } else {
+      mobileTalkBtn.textContent = 'Talk';
+      mobileTalkBtn.classList.remove('recording');
+      mobileTalkBtn.disabled = false;
+      mobileTerminateBtn.disabled = true;
+    }
+  }
+
+  // Update floating button state
+  if (mobileFloatingBtn) {
+    if (isRecording) {
+      mobileFloatingBtn.style.background = '#ff6b6b';
+      mobileFloatingBtn.style.animation = 'pulse 1s infinite';
+    } else if (isProcessing) {
+      mobileFloatingBtn.style.background = '#4ecdc4';
+      mobileFloatingBtn.style.animation = 'pulse 2s infinite';
+    } else {
+      mobileFloatingBtn.style.background = '';
+      mobileFloatingBtn.style.animation = '';
+    }
   }
 }
 
@@ -573,6 +678,7 @@ function updateButtons() {
 function updateStatus(message, type = 'normal') {
   console.log('Jackie Status:', message);
   
+  // Update desktop status
   const statusElement = document.getElementById('jackieStatus');
   if (statusElement) {
     statusElement.textContent = message;
@@ -588,6 +694,26 @@ function updateStatus(message, type = 'normal') {
         break;
       case 'success':
         statusElement.classList.add('success');
+        break;
+    }
+  }
+  
+  // Update mobile status
+  const mobileStatusElement = document.getElementById('mobileJackieStatus');
+  if (mobileStatusElement) {
+    mobileStatusElement.textContent = message;
+    
+    mobileStatusElement.classList.remove('active', 'error', 'success');
+    
+    switch (type) {
+      case 'active':
+        mobileStatusElement.classList.add('active');
+        break;
+      case 'error':
+        mobileStatusElement.classList.add('error');
+        break;
+      case 'success':
+        mobileStatusElement.classList.add('success');
         break;
     }
   }
