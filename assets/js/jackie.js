@@ -90,16 +90,27 @@ function setupEventListeners() {
   }
 
   if (mobileFloatingBtn) {
-    mobileFloatingBtn.addEventListener('click', openMobileModal);
+    mobileFloatingBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openMobileModal();
+    });
   }
 
   if (mobileModalClose) {
-    mobileModalClose.addEventListener('click', closeMobileModal);
+    mobileModalClose.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Modal close button clicked');
+      closeMobileModal();
+    });
   }
 
   if (mobileModal) {
     mobileModal.addEventListener('click', function(e) {
       if (e.target === mobileModal) {
+        e.preventDefault();
+        e.stopPropagation();
         closeMobileModal();
       }
     });
@@ -594,15 +605,23 @@ function generateLocalResponse(userText) {
 
 // Mobile modal functions
 function openMobileModal() {
+  console.log('Opening mobile modal');
   if (mobileModal) {
-    mobileModal.classList.add('active');
+    mobileModal.style.display = 'flex';
+    setTimeout(() => {
+      mobileModal.classList.add('active');
+    }, 10);
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
   }
 }
 
 function closeMobileModal() {
+  console.log('Closing mobile modal');
   if (mobileModal) {
     mobileModal.classList.remove('active');
+    setTimeout(() => {
+      mobileModal.style.display = 'none';
+    }, 300); // Wait for animation to complete
     document.body.style.overflow = ''; // Restore scrolling
   }
 }
@@ -659,17 +678,17 @@ function updateButtons() {
     }
   }
 
-  // Update floating button state
+  // Update floating button state (fixed flickering)
   if (mobileFloatingBtn) {
+    // Remove all state classes first
+    mobileFloatingBtn.classList.remove('recording', 'processing', 'speaking');
+    
     if (isRecording) {
-      mobileFloatingBtn.style.background = '#ff6b6b';
-      mobileFloatingBtn.style.animation = 'pulse 1s infinite';
+      mobileFloatingBtn.classList.add('recording');
     } else if (isProcessing) {
-      mobileFloatingBtn.style.background = '#4ecdc4';
-      mobileFloatingBtn.style.animation = 'pulse 2s infinite';
-    } else {
-      mobileFloatingBtn.style.background = '';
-      mobileFloatingBtn.style.animation = '';
+      mobileFloatingBtn.classList.add('processing');
+    } else if (isSpeaking) {
+      mobileFloatingBtn.classList.add('speaking');
     }
   }
 }
