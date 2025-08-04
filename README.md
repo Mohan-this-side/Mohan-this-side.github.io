@@ -1,4 +1,4 @@
-# 🚀 Mohan Bhosale - AI Engineer Portfolio
+# 🚀 Mohan Bhosale - Portfolio
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://mohan-this-side.github.io/portfolio-website/)
 [![Jackie AI](https://img.shields.io/badge/AI-Assistant-blue)](https://github.com/Mohan-this-side/Jackie-Personal-AI-Voice-Assistant)
@@ -17,7 +17,7 @@
 - **Skills Showcase**: Comprehensive display of technical skills and expertise
 - **Project Gallery**: Featured projects with GitHub links and live demos
 
-### 🤖 **Jackie AI Assistant - Revolutionary Feature**
+### 🤖 **Jackie AI Assistant - Feature**
 Jackie is an intelligent voice assistant integrated directly into the portfolio, providing visitors with an interactive way to learn about my professional background.
 
 #### **How Jackie Works:**
@@ -176,4 +176,3 @@ While this is a personal portfolio, I welcome suggestions and feedback! Feel fre
 
 ---
 
-**Built with ❤️ by Mohan Bhosale | Powered by Jackie AI Assistant**
