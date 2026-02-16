@@ -1228,19 +1228,15 @@
 
                     <h3 class="h4 project-item-title">ClassifyAI: A Multi-Agent LLM System for Explainable Classification Pipelines</h3>
                       <p class="project-text">
-                        Architected a production-grade multi-agent LLM system with 8 specialized AI agents that orchestrate end-to-end ML classification pipelines - from raw dataset upload to a deployment-ready trained model.
+                        Architected a production-grade multi-agent LLM system with 8 specialized AI agents orchestrating end-to-end ML classification pipelines via LangGraph, FastAPI, and a Next.js frontend with real-time WebSocket tracking. The Double-Layer Architecture combines hardcoded statistical analysis (Layer 1) with LLM-generated custom code executed in secure Docker sandboxes (Layer 2), training 9+ algorithms (XGBoost, LightGBM, CatBoost, scikit-learn) in parallel - achieving 83.6% on clinical datasets and generating 5 deliverables per run: cleaned data, trained model, Jupyter notebook, technical report, and visualizations.
                       </p>
                       
                       <p class="project-text">
-                        Built with LangGraph for stateful multi-agent orchestration, FastAPI backend, and a Next.js frontend with real-time WebSocket progress tracking. Trains 9+ ML algorithms (scikit-learn, XGBoost, LightGBM, CatBoost) in parallel, achieving 83.6%+ accuracy on clinical datasets and 100% on benchmark datasets like Loan Approval (2K rows).
+                        Human-in-the-loop approval gates at critical decision points (imputation strategy, feature selection, model choice) ensure full user control, while an interactive Project Manager agent provides real-time educational explanations of every transformation. All LLM-generated code is validated and sandboxed with no network access, complete audit trails, and resource-limited Docker execution.
                       </p>
                       
                       <p class="project-text">
-                        Every workflow run generates 5 complete deliverables: cleaned dataset, trained .joblib model, reproducible Jupyter notebook, comprehensive technical report, and EDA visualizations. Human-in-the-loop approval gates at critical decision points (imputation strategy, feature selection, model choice) ensure user control while the Project Manager provides real-time educational explanations of every step.
-                      </p>
-                      
-                      <p class="project-text">
-                        <u>Use Cases:</u> ClassifyAI is designed for data scientists and ML engineers who want to rapidly prototype classification models with full transparency. It's ideal for healthcare classification tasks, fraud detection pipelines, customer churn prediction, and any tabular classification problem where explainability and reproducibility matter - especially in regulated industries where audit trails and documentation are mandatory.
+                        <u>Use Cases:</u> ClassifyAI is built for data scientists and ML engineers who need rapid, explainable classification prototyping - from healthcare mortality prediction and fraud detection to customer churn analysis. Particularly valuable in regulated industries (healthcare, finance) where reproducibility, audit trails, and automated documentation are mandatory.
                       </p>
 
                       <div class="project-tech">
