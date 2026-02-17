@@ -665,6 +665,22 @@ main {
   margin-bottom: 7px;
 }
 
+.timeline-item .program-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.timeline-item .program-date {
+  color: var(--vegas-gold);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-400);
+  white-space: nowrap;
+}
+
 .timeline-item .program {
   color: var(--vegas-gold);
   font-weight: var(--fw-400);
