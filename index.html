@@ -1135,64 +1135,64 @@
             <ul class="project-posts-list">
 
               <li class="project-post-item">
-                <a href="https://github.com/Mohan-this-side/Jackie-Personal-AI-Voice-Assistant" target="_blank">
+                <a href="https://github.com/YashKhare20/himas-mlops" target="_blank">
 
-                  <figure class="project-banner-box jackie-flowchart">
-                    <img src="assets/images/jackie_flowchart.svg" alt="Jackie AI Voice Assistant" loading="lazy">
+                  <figure class="project-banner-box">
+                    <img src="assets/images/gcp-himas-architecture.png" alt="HIMAS Federated Learning Healthcare MLOps Architecture" loading="lazy">
                   </figure>
 
                   <div class="project-content">
 
                     <div class="project-meta">
-                      <p class="project-category">AI</p>
+                      <p class="project-category">Federated Learning</p>
 
                       <span class="dot"></span>
 
-                      <p class="project-category">FastAPI</p>
+                      <p class="project-category">Multi-Agent AI</p>
                       
                       <span class="dot"></span>
 
-                      <p class="project-category">WebSocket</p>
+                      <p class="project-category">MLOps</p>
 
                       <span class="dot"></span>
 
-                      <p class="project-category">Groq</p>
+                      <p class="project-category">GCP</p>
                       
                     </div>
 
-                    <h3 class="h4 project-item-title">Jackie x AI Voice Assistant</h3>
+                    <h3 class="h4 project-item-title">HIMAS: Healthcare Intelligence Multi-Agent System</h3>
                       <p class="project-text">
-                        Built a production-ready AI voice assistant using FastAPI and WebSocket for real-time communication, leveraging Groq's ultra-fast Llama-3.3-70B model for intelligent responses. 
-                        Implemented comprehensive speech-to-text using Groq Whisper with local fallbacks, and high-quality text-to-speech synthesis using Microsoft Edge TTS for natural voice interactions.
+                        Built a production-grade federated learning MLOps platform enabling privacy-preserving ICU mortality prediction (ROC-AUC 0.85) across 3 simulated hospitals using Flower, TensorFlow, and Airflow on GCP. The system trains on ~60K ICU stays from MIMIC-IV without centralizing patient data - each hospital's data stays local while a Flower SuperLink aggregates model weights via FedAvg over 15 rounds. End-to-end pipelines handle data ingestion, 35-feature engineering, Keras Tuner hyperparameter optimization, bias detection with Fairlearn, and automated CI/CD deployment to Cloud Run with rollback capabilities.
                       </p>
                       
                       <p class="project-text">
-                        Deployed on Modal.com serverless infrastructure with encrypted API key management and DuckDuckGo web search integration for current information retrieval. 
-                        The system achieves 3-7 second end-to-end response times with automatic scaling and maintains secure HTTPS/WSS communication protocols.
+                        A 6-agent clinical AI system built with Google ADK and Gemini 2.5 provides real-time decision support - including mortality risk scoring, treatment optimization, resource allocation, and cross-hospital transfer coordination. All inter-hospital queries are privacy-preserved with K-anonymity (k=5) and differential privacy (ε=0.1), ensuring full HIPAA compliance with complete audit trails in BigQuery. <strong>[Won 1st Place at the Google Cambridge MLOps Hackathon.]</strong>
                       </p>
                       
                       <p class="project-text">
-                        <u>Use Cases:</u> Professional portfolio assistance for recruiters and clients, real-time voice-enabled Q&A for accessibility, automated customer support systems, 
-                        and intelligent virtual receptionists for businesses across healthcare, education, and technology sectors.
+                        <u>Use Cases:</u> HIMAS enables hospitals to collaboratively improve ICU mortality prediction without sharing raw patient data - critical for multi-site health systems, clinical research networks, and any healthcare setting where data privacy regulations prevent centralized model training. Clinicians get real-time risk stratification, transfer recommendations, and network-wide case consultation while maintaining strict HIPAA compliance.
                       </p>
 
                       <div class="project-tech">
-                        <span class="tech">FastAPI</span>
+                        <span class="tech">Flower</span>
                       </div>
                       <div class="project-tech">
-                        <span class="tech">Groq LLM</span>
+                        <span class="tech">Google ADK</span>
                       </div>
                       <div class="project-tech">
-                        <span class="tech">WebSocket</span>
+                        <span class="tech">Airflow</span>
                       </div>
                       <div class="project-tech">
-                        <span class="tech">Modal.com</span>
+                        <span class="tech">GCP</span>
                       </div>
                       <div class="project-tech">
-                        <span class="tech">Whisper STT</span>
+                        <span class="tech">TensorFlow</span>
                       </div>
                       <div class="project-tech">
-                        <span class="tech">Edge TTS</span>
+                        <span class="tech">Multi-Agent AI</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">MLflow</span>
                       </div>
 
                     </div>
@@ -1256,6 +1256,72 @@
                       </div>
                       <div class="project-tech">
                         <span class="tech">scikit-learn</span>
+                      </div>
+
+                    </div>
+
+                  </a>
+                </li>
+
+              <li class="project-post-item">
+                <a href="https://github.com/Mohan-this-side/Jackie-Personal-AI-Voice-Assistant" target="_blank">
+
+                  <figure class="project-banner-box jackie-flowchart">
+                    <img src="assets/images/jackie_flowchart.svg" alt="Jackie AI Voice Assistant" loading="lazy">
+                  </figure>
+
+                  <div class="project-content">
+
+                    <div class="project-meta">
+                      <p class="project-category">AI</p>
+
+                      <span class="dot"></span>
+
+                      <p class="project-category">FastAPI</p>
+                      
+                      <span class="dot"></span>
+
+                      <p class="project-category">WebSocket</p>
+
+                      <span class="dot"></span>
+
+                      <p class="project-category">Groq</p>
+                      
+                    </div>
+
+                    <h3 class="h4 project-item-title">Jackie x AI Voice Assistant</h3>
+                      <p class="project-text">
+                        Built a production-ready AI voice assistant using FastAPI and WebSocket for real-time communication, leveraging Groq's ultra-fast Llama-3.3-70B model for intelligent responses. 
+                        Implemented comprehensive speech-to-text using Groq Whisper with local fallbacks, and high-quality text-to-speech synthesis using Microsoft Edge TTS for natural voice interactions.
+                      </p>
+                      
+                      <p class="project-text">
+                        Deployed on Modal.com serverless infrastructure with encrypted API key management and DuckDuckGo web search integration for current information retrieval. 
+                        The system achieves 3-7 second end-to-end response times with automatic scaling and maintains secure HTTPS/WSS communication protocols.
+                      </p>
+                      
+                      <p class="project-text">
+                        <u>Use Cases:</u> Professional portfolio assistance for recruiters and clients, real-time voice-enabled Q&A for accessibility, automated customer support systems, 
+                        and intelligent virtual receptionists for businesses across healthcare, education, and technology sectors.
+                      </p>
+
+                      <div class="project-tech">
+                        <span class="tech">FastAPI</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">Groq LLM</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">WebSocket</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">Modal.com</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">Whisper STT</span>
+                      </div>
+                      <div class="project-tech">
+                        <span class="tech">Edge TTS</span>
                       </div>
 
                     </div>
