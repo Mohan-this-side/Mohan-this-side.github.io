@@ -16,7 +16,11 @@ let localMode = false;
 let recognition = null;
 let isMobile = false;
 
+const JACKIE_COMPACT_BREAKPOINT = 1380;
 
+function isCompactJackieLayout() {
+  return window.innerWidth < JACKIE_COMPACT_BREAKPOINT;
+}
 
 // Voice Assistant Configuration
 const BACKEND_URL = 'https://mohan-this-side--mohan-voice-assistant-latest-fastapi-app.modal.run';
@@ -27,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function initializeJackieWithRetry() {
-  // Detect if we're on mobile
-  isMobile = window.innerWidth <= 767;
+  // Keep Jackie in compact mode until the layout has room for the full sidebar.
+  isMobile = isCompactJackieLayout();
   
   // Ensure Jackie sidebar is expanded and handle its button
   const jackieSidebar = document.querySelector('.sidebar.jackie-sidebar');
@@ -118,7 +122,7 @@ function setupEventListeners() {
 
   // Handle window resize for mobile detection
   window.addEventListener('resize', function() {
-    isMobile = window.innerWidth <= 767;
+    isMobile = isCompactJackieLayout();
   });
 
   // Keyboard shortcuts (only for desktop)
@@ -182,13 +186,7 @@ function connectWebSocket() {
       console.log('WebSocket connected successfully');
       clearTimeout(connectionTimeout);
       updateStatus('🔗 NEURAL LINK ESTABLISHED - Jackie is ready', 'success');
-      
-      if (!hasGreeted) {
-        setTimeout(() => {
-          playGreeting();
-          hasGreeted = true;
-        }, 1000);
-      }
+      hasGreeted = true;
     };
     
     websocket.onmessage = function(event) {
@@ -516,13 +514,7 @@ function stopCurrentAudio() {
 function enableLocalMode() {
   localMode = true;
   updateStatus('💻 LOCAL MODE ACTIVE - Limited functionality', 'active');
-  
-  if (!hasGreeted) {
-    setTimeout(() => {
-      playGreeting();
-      hasGreeted = true;
-    }, 1000);
-  }
+  hasGreeted = true;
   
   if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -764,4 +756,4 @@ style.innerHTML = `
     transition: background 0.3s ease;
   }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
