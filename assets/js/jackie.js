@@ -15,6 +15,11 @@ let hasGreeted = false;
 let localMode = false;
 let recognition = null;
 let isMobile = false;
+let reconnectAttempts = 0;
+let reconnectTimer = null;
+let isUnloading = false;
+
+const MAX_RECONNECT_ATTEMPTS = 5;
 
 const JACKIE_COMPACT_BREAKPOINT = 1380;
 
@@ -142,6 +147,7 @@ function setupEventListeners() {
 
   // Cleanup on page unload
   window.addEventListener('beforeunload', function() {
+    isUnloading = true;
     if (websocket) {
       websocket.close();
     }
@@ -174,33 +180,45 @@ function connectWebSocket() {
     
     websocket = new WebSocket(wsUrl);
     
+    // Give a cold-starting backend time to come up; local mode covers the wait after 3 seconds
     const connectionTimeout = setTimeout(() => {
       if (websocket.readyState !== WebSocket.OPEN) {
         console.log('WebSocket connection timeout, switching to local mode');
         websocket.close();
         enableLocalMode();
       }
-    }, 5000);
-    
+    }, 15000);
+
     websocket.onopen = function() {
       console.log('WebSocket connected successfully');
       clearTimeout(connectionTimeout);
+      reconnectAttempts = 0;
+      // Backend connected after the local fallback kicked in: switch back to full Jackie
+      if (localMode && !isRecording && !isProcessing) {
+        localMode = false;
+      }
       updateStatus('🔗 NEURAL LINK ESTABLISHED - Jackie is ready', 'success');
       hasGreeted = true;
     };
-    
+
     websocket.onmessage = function(event) {
       const data = JSON.parse(event.data);
       handleWebSocketMessage(data);
     };
-    
+
     websocket.onclose = function() {
       console.log('WebSocket connection closed');
       clearTimeout(connectionTimeout);
       if (!localMode) {
+        // A question sent to the backend will never be answered now; free the Talk button
+        if (isProcessing) {
+          isProcessing = false;
+          updateButtons();
+        }
         updateStatus('⚠️ CONNECTION LOST - Switching to local mode...', 'error');
         setTimeout(() => enableLocalMode(), 1000);
       }
+      scheduleReconnect();
     };
     
     websocket.onerror = function(error) {
@@ -215,6 +233,20 @@ function connectWebSocket() {
     updateStatus('❌ BACKEND OFFLINE - Using local voice mode', 'error');
     enableLocalMode();
   }
+}
+
+// The backend drops connections on its timeout and on redeploys; reconnect with backoff so Jackie recovers
+function scheduleReconnect() {
+  if (isUnloading || reconnectTimer || reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
+    return;
+  }
+  const delay = Math.min(2000 * 2 ** reconnectAttempts, 30000);
+  reconnectAttempts++;
+  console.log(`Reconnecting to Jackie backend in ${delay / 1000}s (attempt ${reconnectAttempts})`);
+  reconnectTimer = setTimeout(() => {
+    reconnectTimer = null;
+    connectWebSocket();
+  }, delay);
 }
 
 // Handle WebSocket messages
