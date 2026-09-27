@@ -232,7 +232,7 @@ function handleWebSocketMessage(data) {
     case 'response':
       console.log('Jackie response:', data.text);
       if (data.audio) {
-        playAudio(data.audio);
+        playAudio(data.audio, data.audioFormat);
       } else {
         updateStatus('📝 RESPONSE READY - No audio available');
         isProcessing = false;
@@ -434,11 +434,13 @@ function sendAudioToBackend(audioBlob) {
 }
 
 // Play audio response
-function playAudio(base64Audio) {
+function playAudio(base64Audio, audioFormat = 'mp3') {
   try {
     stopCurrentAudio();
-    
-    currentAudio = new Audio(`data:audio/wav;base64,${base64Audio}`);
+
+    // Backend sends MP3 (Edge TTS) and only falls back to WAV; label it correctly for Safari
+    const mimeType = audioFormat === 'wav' ? 'audio/wav' : 'audio/mpeg';
+    currentAudio = new Audio(`data:${mimeType};base64,${base64Audio}`);
     isSpeaking = true;
     isProcessing = false;
     updateButtons();
@@ -560,14 +562,16 @@ function generateLocalResponse(userText) {
   let response = "I'm currently in local mode with limited functionality. ";
   
   const text = userText.toLowerCase();
-  if (text.includes('experience') || text.includes('work')) {
-    response += "Mohan has over 3 years of data science experience, currently working at Cohere Health and previously at Mediamint and Allround Club.";
+  if (text.includes('hackathon') || text.includes('award') || text.includes('win')) {
+    response += "Mohan's team Retrieval Crew won Track A, Best Engine, at the RAG the City hackathon, and his team's HIMAS project won first place at the Google Cambridge MLOps Hackathon.";
+  } else if (text.includes('experience') || text.includes('work')) {
+    response += "Mohan is a Data Scientist and AI/ML Engineer with over 4 years of experience. He was a Data Scientist Co-op at Cohere Health, and before that worked at MediaMint and Allround Club.";
   } else if (text.includes('skill') || text.includes('technology')) {
-    response += "Mohan specializes in Python, Machine Learning, PySpark, TensorFlow, AWS, and healthcare data science.";
+    response += "Mohan specializes in Python, machine learning, PySpark, AWS SageMaker, experimentation, and multi-agent LLM and RAG systems.";
   } else if (text.includes('education') || text.includes('study')) {
-    response += "Mohan is pursuing a Master's in Data Science at Northeastern University, expected to graduate in December 2025.";
+    response += "Mohan holds a Master's in Data Science from Northeastern University, where he graduated with a 3.96 GPA.";
   } else if (text.includes('project')) {
-    response += "Mohan has worked on predictive modeling, recommendation systems, customer segmentation, and real-time data pipelines.";
+    response += "Mohan's projects include HIMAS, a federated learning healthcare platform, ClassifyAI, an 8-agent LLM system, and NewsBuddy AI, a RAG news companion.";
   } else {
     response += "For detailed information about Mohan's background, please try when the full backend is available, or check his portfolio sections.";
   }
